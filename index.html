@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Web App</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="relative h-screen w-screen overflow-hidden">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-2]">
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="absolute top-0 left-0 w-full h-full bg-black/80 z-[-1]"></div>
+
+    <!-- Content Container -->
+    <div class="container flex justify-center items-center h-full ml-9">
+        <div class="relative z-10 flex flex-col text-center w-[500px] bg-gray-600 border border-gray-400 rounded-2xl  p-4">
+
+            <!-- Title -->
+            <div class="flex gap-2 justify-center items-center mb-4">
+                <ion-icon name="thunderstorm" class="text-5xl text-blue-400"></ion-icon>
+                <h1 class="text-white text-4xl font-bold">Weather Web App</h1>
+            </div>
+
+            <!-- Search Form -->
+            <form onsubmit="check(event)" class="w-[400px] p-2 flex items-center gap-2 mx-auto">
+                <input id="inputBox" type="text" placeholder="Enter the city name" class="flex-grow p-2 rounded-lg border border-gray-300" />
+                <button type="submit" class="flex items-center gap-1 bg-white px-3 py-2 rounded-full border border-gray-300 hover:bg-gray-600 hover:text-white ">
+                    <span>Search</span>
+                    <ion-icon name="search"></ion-icon>
+                </button>
+            </form>
+
+            <!-- Location Info -->
+            <div class="mt-5 p-1 flex justify-evenly text-cyan-50">
+                <div>
+                    <h2 class="text-lg">Country</h2>
+                    <p id="countryName">__</p>
+                </div>
+                <div>
+                    <h2 class="text-lg ">State</h2>
+                    <p id="stateName">__</p>
+                </div>
+                <div>
+                    <h2 class="text-lg ">City</h2>
+                    <p id="cityName">__</p>
+                </div>
+            </div>
+
+            <!-- Weather Info -->
+            <div class="mt-5 p-1 flex justify-evenly text-cyan-50">
+                <div>
+                    <h2 class="text-lg ">Humidity</h2>
+                    <p id="humudity">__</p>
+                </div>
+                <div>
+                    <h2 class="text-lg ">Wind Speed</h2>
+                    <p id="windSpeed">__</p>
+                </div>
+                <div>
+                    <h2 class="text-lg ">Temperature</h2>
+                    <p id="temperature">__ <sup>o</sup>C</p>
+                </div>
+                <div>
+                    <img id="logo" class="w-7  h-7 mx-auto" src="image.jpg" />
+                    <p id="status">__</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
